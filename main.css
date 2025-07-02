@@ -105,9 +105,9 @@ white-space:normal;
   margin-left: auto;
   margin-right: auto;
   width: 70vw;
-  max-width: 300px;
+  max-width: 350px;
   height: 63vw;
-  max-height: 270px;
+  max-height: 315px;
   left: 50%;
   transform: translateX(-50%);
   bottom: 5vh;
@@ -117,6 +117,22 @@ white-space:normal;
   background: linear-gradient(135deg,rgba(10, 186, 255, 1) 0%, rgba(237, 83, 188, 1) 100%);
   box-shadow: rgba(0, 0, 0, 0.8) 10px 10px 20px -5px, rgba(247, 247, 247, 0.5) 3px 3px 3px 3px inset, rgba(75, 76, 77, 0.25) -3px -3px 3px 3px inset;
   /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+}
+
+/* Portrait: max-width is 60vw, max-height is 90% of max-width */
+@media (min-width:768px) and (orientation: portrait) {
+  .bars {
+    max-width: 60vw !important;
+    max-height: 54vw !important;
+  }
+}
+
+/* Landscape: max-width is 60vh, max-height is 90% of max-width */
+@media (orientation: landscape) {
+  .bars {
+    max-width: 50vh !important;
+    max-height: 45vh !important;
+  }
 }
 .bar{
     flex: 1 1 0;

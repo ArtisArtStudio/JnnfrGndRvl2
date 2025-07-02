@@ -177,8 +177,8 @@ function shuffleArray(array) {
             const barsWidth = bars.getBoundingClientRect().width;
 
             // Set .bars max size and padding
-            bars.style.maxWidth = '300px';
-            bars.style.maxHeight = '270px';
+            //bars.style.maxWidth = '300px';
+            //bars.style.maxHeight = '270px';
             const barsPadding = Math.round(barsWidth / 10);
             bars.style.padding = barsPadding + 'px';
 

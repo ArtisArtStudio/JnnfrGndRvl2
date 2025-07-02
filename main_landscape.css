@@ -65,9 +65,9 @@ text-align: center;
 }
 .bars {
   width: 20em;
-  max-width: 300px;
+  max-width: 300px !important;
   height: 18em;
-  max-height: 270px;
+  max-height: 270px !important;
   padding: 1em;
 }
 .bar {
@@ -215,12 +215,11 @@ text-align: center;
   .pagetop h1 {
     font-size: calc(1rem + 5vw);
   }
- /* .bars {
-    width: 15em;
-    height: 13.5em;
-    padding: 1.1em;
+  .bars {
+  max-width: 250px !important;
+  max-height: 225px !important;  
   }
-  .bar {
+ /* .bar {
     margin: 0 0.2em;
   } */
 /*   .images{
@@ -231,11 +230,11 @@ text-align: center;
   .pagetop h1 {
     font-size: calc(1rem + 5vw);
   }
-/*   .bars {
-    width: 15em;
-    height: 13.5em;
-    padding: 1.1em;
+    .bars {
+  max-width: 250px !important;
+  max-height: 225px !important;  
   }
+/* 
   .bar {
     margin: 0 0.2em;
   } */
