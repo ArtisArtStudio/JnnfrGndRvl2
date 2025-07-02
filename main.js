@@ -193,6 +193,7 @@ function shuffleArray(array) {
             const totalBarMargins = (numBars * 2 * barMargin);
             const availableWidth = barsWidth - 2 * barsPadding - totalBarMargins;
             const barWidth = availableWidth / numBars;
+
             $barElems.each(function() {
                 this.style.width = barWidth + 'px';
             });
@@ -209,7 +210,9 @@ function shuffleArray(array) {
             // Remove any forced background-size logic; let CSS/JS set it only once at init if needed
             $barElems.each(function() {
                 // Only set background-size if not already set, and do not stretch in Y
-                this.style.backgroundSize = '';
+                //this.style.backgroundSize = '';
+                this.style.backgroundSize = `auto ${iconHeight * totalIcons}px`;
+
             });
             positionBars(false);
             if (triggered) {
