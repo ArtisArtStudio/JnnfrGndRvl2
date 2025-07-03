@@ -144,16 +144,36 @@ white-space:normal;
     backface-visibility: hidden;
     background-attachment: scroll; /* iOS Safari issue fix */
   }
+
 @keyframes flashPink {
-    0% { background-color: white;background: none;  box-shadow: rgba(50, 50, 93, 0.85) 10px 50px 100px -20px, rgba(0, 0, 0, 0.2) 10px 30px 40px -5px, rgba(247, 247, 247, 0.5) 3px 3px 3px 3px inset, rgba(75, 76, 77, 0.25) -3px -3px 3px 3px inset;}
-    100% { background-color: #ff0b9a;background: "transparent";  box-shadow: rgba(50, 50, 93, 0.85) 10px 50px 100px -20px, rgba(0, 0, 0, 0.2) 10px 30px 40px -5px, rgba(247, 247, 247, 0.5) 3px 3px 3px 3px inset, rgba(75, 76, 77, 0.25) -3px -3px 3px 3px inset, #ff0b9a 0 0 80px;}
+    0% {
+      background-color: white;
+      background: none;
+      box-shadow: rgba(50, 50, 93, 0.85) 10px 50px 100px -20px,
+        rgba(0, 0, 0, 0.2) 10px 30px 40px -5px,
+        rgba(247, 247, 247, 0.5) 3px 3px 3px 3px inset,
+        rgba(75, 76, 77, 0.25) -3px -3px 3px 3px inset;
+    }
+    100% {
+      background-color: var(--flash-color);
+      background: transparent !important;
+      box-shadow: rgba(50, 50, 93, 0.85) 10px 50px 100px -20px,
+        rgba(0, 0, 0, 0.2) 10px 30px 40px -5px,
+        rgba(247, 247, 247, 0.5) 3px 3px 3px 3px inset,
+        rgba(75, 76, 77, 0.25) -3px -3px 3px 3px inset,
+        0 0 80px var(--flash-color);
+    }
 }
 .bars.flash-pink {
     animation: flashPink 0.3s linear 0s 8 alternate;
 }
 .bars.flash-pink-done {
-  background: #ff0b9a !important;
-  box-shadow: rgba(50, 50, 93, 0.85) 10px 50px 100px -20px, rgba(0, 0, 0, 0.2) 10px 30px 40px -5px, rgba(247, 247, 247, 0.5) 3px 3px 3px 3px inset, rgba(75, 76, 77, 0.25) -3px -3px 3px 3px inset, 0 0 80px #ff0b9a;
+  background: var(--flash-color) !important;
+  box-shadow: rgba(50, 50, 93, 0.85) 10px 50px 100px -20px,
+    rgba(0, 0, 0, 0.2) 10px 30px 40px -5px,
+    rgba(247, 247, 247, 0.5) 3px 3px 3px 3px inset,
+    rgba(75, 76, 77, 0.25) -3px -3px 3px 3px inset,
+    0 0 80px var(--flash-color);
   animation: none !important;
 }
 /* Landscape: max-width is 60vh, max-height is 90% of max-width */

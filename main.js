@@ -423,6 +423,10 @@ function stopReelSound() {
         }
 function flashBars() {
   const bars = document.querySelector('.bars');
+  // Set --flash-color CSS variable to colortxt for dynamic flash color
+  if (bars) {
+    bars.style.setProperty('--flash-color', colortxt);
+  }
   $('.bars').css('background', 'none'); // Remove background image
   bars.classList.add('flash-pink');
   // After animation, remove flash-pink and add flash-pink-done
@@ -463,8 +467,14 @@ function flashPinkOverlayReel3() {
   overlay.style.top = overlayTop + 'px';
   overlay.style.width = bar3.offsetWidth + 'px';
   overlay.style.height = overlayHeight + 'px';
-  overlay.style.background = 'rgba(255, 105, 180, 0.7)';
-  overlay.style.border = '4px solid #ff69b4';
+  // Use colortxt for overlay color and border, with transparency
+  overlay.style.background = colortxt + 'b3'; // add alpha if hex, fallback to rgba below
+  // If colortxt is not hex, fallback to rgba with alpha
+  if (!/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(colortxt)) {
+    overlay.style.background = colortxt;
+    overlay.style.opacity = 0.7;  
+  }
+    overlay.style.border = '4px solid ' + colortxt;
   overlay.style.borderRadius = '8px';
   overlay.style.pointerEvents = 'none';
   overlay.style.boxSizing = 'border-box';
@@ -482,7 +492,7 @@ function flashPinkOverlayReel3() {
   });
   setTimeout(function() {
     overlay.style.background = 'none';
-    overlay.style.border = '4px solid #ff69b4';
+    overlay.style.border = '4px solid ' + colortxt;
   }, 1200);
 }
 
@@ -535,7 +545,7 @@ async function onSpinButtonClick() {
   $("#gameText").removeClass('pulsate');
   spinCount++;
   if (isFirstSpin) {
-    $("#gameText").text("👶 The baby is keeping it a secret!");
+    $("#gameText").text("👶 The baby is keeping it a secret! Try again!");
     $("#resetbutton").val('Spin Again');
     $("#resetbutton").css('visibility', 'visible');
   } else if (isSecondSpin) {
@@ -547,7 +557,11 @@ async function onSpinButtonClick() {
     setTimeout(() => {
       flashBars();
       confetti_effect();
-      $("#gameText").text("Our third baby will be a baby girl!");
+      if(color==color1){
+        $("#gameText").text("Our third baby will be a baby girl!");
+       } else if(color==color2){
+        $("#gameText").text("Our third baby will be a baby boy!");
+      }
       flashPinkOverlayReel3();
     }, 500);
     spinCount = 0; // Reset for next game
