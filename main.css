@@ -120,20 +120,14 @@ white-space:normal;
 }
 
 /* Portrait: max-width is 60vw, max-height is 90% of max-width */
-@media (min-width:768px) and (orientation: portrait) {
+/* @media (min-width:768px) and (orientation: portrait) {
   .bars {
     max-width: 60vw !important;
     max-height: 54vw !important;
   }
-}
+} */
 
-/* Landscape: max-width is 60vh, max-height is 90% of max-width */
-@media (orientation: landscape) {
-  .bars {
-    max-width: 50vh !important;
-    max-height: 45vh !important;
-  }
-}
+
 .bar{
     flex: 1 1 0;
     margin: 0 5vw;
@@ -161,6 +155,13 @@ white-space:normal;
   background: #ff0b9a !important;
   box-shadow: rgba(50, 50, 93, 0.85) 10px 50px 100px -20px, rgba(0, 0, 0, 0.2) 10px 30px 40px -5px, rgba(247, 247, 247, 0.5) 3px 3px 3px 3px inset, rgba(75, 76, 77, 0.25) -3px -3px 3px 3px inset, 0 0 80px #ff0b9a;
   animation: none !important;
+}
+/* Landscape: max-width is 60vh, max-height is 90% of max-width */
+@media (orientation: landscape) {
+  .bars {
+    max-width: 50vh !important;
+    max-height: 45vh !important;
+  }
 }
 /* Styles for mobile phones */ 
 
@@ -217,7 +218,10 @@ white-space:normal;
   .pagetop h4 {
     font-size: 2vh;
   }  
-  
+  .bars {
+    max-width: 60vw !important;
+    max-height: 54vw !important;
+  }
 }
 
 /* @media (min-width: 1024px){
@@ -239,6 +243,7 @@ white-space:normal;
   .pagetop h4 {
     font-size: 2vh;
   }
+
  /*  .bars {
     padding: 1.2vw;
   }
